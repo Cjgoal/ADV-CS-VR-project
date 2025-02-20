@@ -191,7 +191,7 @@ func _update_value_display():
 		value_label.global_transform.origin = right_hand.global_transform.origin + Vector3(0, 0.2, 0)
 
 func _attach_value_display_to_hand():
-	var player = get_tree().get_first_node_in_group("player")
+	var player = get_tree().get_first_node_in_group("XROrigin3D")
 	if not player:
 		return
 	
