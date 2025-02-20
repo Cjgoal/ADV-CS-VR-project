@@ -52,6 +52,11 @@ var _last_pocket : PersistentPocket
 # Auto-return timer node
 var _auto_return_timer : Timer
 
+# for storing data for item worth
+@export var value : float
+
+
+
 
 # Add support for is_xr_class
 func is_xr_class(p_name : String) -> bool:
@@ -61,6 +66,9 @@ func is_xr_class(p_name : String) -> bool:
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
+	
+	if value == 0:
+		value = randf_range(20, 100)
 
 	# Subscribe to picked_up and dropped signals
 	picked_up.connect(_on_picked_up)
@@ -79,7 +87,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 	if not item_type:
 		warnings.append("PersistentItem Type not set")
 
-	# Verify item is in persistent group
+	# Verify/home/coolbro/Documents/ADV-CS-VR-project/ item is in persistent group
 	if not is_in_group("persistent"):
 		warnings.append("PersistentItem not in 'persistent' group")
 
@@ -168,6 +176,7 @@ func _destroy() -> void:
 ## calling super() to load the basic information and then reading additional
 ## state information from the dictionary.
 func _load_world_state(state : Dictionary) -> void:
+	value = state.get("value", value)
 	# Restore the location
 	var location = state.get("location")
 	if location is Transform3D:
@@ -183,6 +192,7 @@ func _save_world_state(state : Dictionary) -> void:
 	# Save the type and location
 	state["type"] = item_type.type_id
 	state["location"] = global_transform
+	state["value"] = value
 
 
 # Start the auto-return timer

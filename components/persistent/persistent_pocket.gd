@@ -35,6 +35,9 @@ enum HeldBehavior {
 # Parent pickable body
 var _parent_body : XRToolsPickable
 
+var total_value: float = 0
+
+var value_label: Label3D
 
 # Add support for is_xr_class
 func is_xr_class(p_name : String) -> bool:
@@ -48,6 +51,14 @@ func _ready():
 	# Skip initialization if in editor
 	if Engine.is_editor_hint():
 		return
+		
+	
+	# Create a 3D label to display the value
+	value_label = Label3D.new()
+	value_label.text = "Total: 0"
+	value_label.position = Vector3(0, 0.5, 0)  # Adjust position above the box
+	value_label.font_size = 32
+	add_child(value_label)
 
 	# Search for an ancestor XRToolsPickable
 	_parent_body = XRTools.find_xr_ancestor(self, "*", "XRToolsPickable")
@@ -140,6 +151,11 @@ func _populate_pocket() -> void:
 
 	# Put the item in the pocket
 	item.global_transform = global_transform
+	
+	# random value for pickup if it doesnt have one
+	if not item.has_method("get_value"):
+		item.set_meta("value", randf_range(20,100))
+	
 	pick_up_object.call_deferred(item)
 
 
@@ -147,6 +163,15 @@ func _populate_pocket() -> void:
 func _on_picked_up(_pickable) -> void:
 	_update_held_behavior()
 
+	# Update and show the total value when an item is collected
+	if picked_up_object and picked_up_object.has_meta("value"):
+		var item_value = picked_up_object.get_meta("value")
+		total_value += item_value
+		_update_value_display()
+		
+func _update_value_display():
+	if value_label:
+		value_label.text = "Total: %d" % total_value
 
 # Called when the parent pickable body is dropped
 func _on_dropped(_pickable) -> void:
