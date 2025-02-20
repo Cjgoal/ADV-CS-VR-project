@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dr7lfaoyhdvar"
+path.s3tc="res://.godot/imported/US-House_Doorknob_NRML_DX_1k.jpg-62b9a36fa627f88b05668fa2e94c79d4.s3tc.ctex"
+path.etc2="res://.godot/imported/US-House_Doorknob_NRML_DX_1k.jpg-62b9a36fa627f88b05668fa2e94c79d4.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "ea3cf0fab95009c54798198d4cecb519"
+}
+
+[deps]
+
+source_file="res://US-House_Doorknob_NRML_DX_1k.jpg"
+dest_files=["res://.godot/imported/US-House_Doorknob_NRML_DX_1k.jpg-62b9a36fa627f88b05668fa2e94c79d4.s3tc.ctex", "res://.godot/imported/US-House_Doorknob_NRML_DX_1k.jpg-62b9a36fa627f88b05668fa2e94c79d4.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://US-House_Doorknob_NRML_DX_1k.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
