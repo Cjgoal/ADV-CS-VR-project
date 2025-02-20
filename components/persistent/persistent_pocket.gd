@@ -68,6 +68,8 @@ func _ready():
 
 	# Update the held behavior
 	_update_held_behavior()
+	
+	_attach_value_display_to_hand()
 
 
 # Get configuration warnings
@@ -170,13 +172,45 @@ func _on_picked_up(_pickable) -> void:
 		_update_value_display()
 		
 func _update_value_display():
-	if value_label:
-		value_label.text = "Total: %d" % total_value
+	if not value_label:
+		return
+
+	# Set the new text
+	value_label.text = "Total: %d" % total_value
+	
+	# Find the player's hand (adjust path if necessary)
+	var player = get_tree().get_first_node_in_group("player")
+	if not player:
+		return
+	
+	# Try to find the right hand controller
+	var right_hand = player.find_child("RightHand", true, false)  # Adjust if needed
+	
+	if right_hand:
+		# Move the label to be above the right hand
+		value_label.global_transform.origin = right_hand.global_transform.origin + Vector3(0, 0.2, 0)
+
+func _attach_value_display_to_hand():
+	var player = get_tree().get_first_node_in_group("player")
+	if not player:
+		return
+	
+	var right_hand = player.find_child("RightHand", true, false)
+	if right_hand:
+		# Reparent the label to the right hand
+		right_hand.add_child(value_label)
+		value_label.position = Vector3(0, 0.2, 0)  # Slightly above the hand
+
 
 # Called when the parent pickable body is dropped
 func _on_dropped(_pickable) -> void:
 	_update_held_behavior()
-
+	
+		# Update and subtract the total value when an item is removed
+	if picked_up_object and picked_up_object.has_meta("value"):
+		var item_value = picked_up_object.get_meta("value")
+		total_value -= item_value
+		_update_value_display()
 
 # Called when the held_behavior property has been modified
 func _set_held_behavior(p_held_behavior : HeldBehavior) -> void:
