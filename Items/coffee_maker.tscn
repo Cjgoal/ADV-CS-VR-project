@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmlm8lj4k04f6"]
+
+[ext_resource type="PackedScene" uid="uid://dr411nmheckvf" path="res://Items/Object Template.tscn" id="1_l5d2b"]
+[ext_resource type="PackedScene" uid="uid://dslfjrtyra1ck" path="res://Items/mesh files/uploads_files_3629114_Machine+v1.fbx" id="2_1ourn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijtmb"]
+size = Vector3(0.126953, 0.139236, 0.18811)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2uke7"]
+points = PackedVector3Array(0.00358413, -0.00105668, 0.00275941, -0.00275859, -0.00070421, 0.000294145, 0.00276149, 0.00375873, 0.000294145, -0.00252329, 0.00340626, 0.0054619, 0.00287883, -0.00364099, 0.000294145, -0.00252329, -0.00340626, 0.0054619, 0.00217415, 0.00305378, 0.00499122, -0.00252329, 0.00340626, -5.87301e-05, 0.00217415, -0.00328779, 0.00487396, -0.00252329, -0.00340626, -5.87301e-05, -0.00275859, 0.00375799, 0.00487396, 0.0025268, 0.00340552, -5.81897e-05, -0.00264063, -0.00375873, 0.00487396, 0.000412768, 0.00340626, 0.0054619, 0.000412768, -0.00340626, 0.0054619, -0.00275859, 0.00375799, 0.000294145, 0.0025268, -0.00340552, -5.81897e-05, 0.00346616, 0.00140842, 0.00287721, -0.00264063, -0.00375873, 0.000294145, 0.000412768, 0.00375799, 0.0048745, -0.000761281, -0.00375873, 0.0048745, 0.00287883, 0.00364026, 0.000294145, 0.00287883, -0.00364099, 0.00123389, 0.00276149, 0.00375873, 0.00123389, 0.00358413, -0.00140842, 0.00252542, 0.00217415, -0.00305378, 0.00499122, 0.00193947, 0.00340552, 0.00499122, -0.000761281, -0.00375873, 0.000294686, 0.00182212, -0.00340552, 0.00499122, 0.00287883, 0.00364026, 0.00123389, 0.00346616, 0.00140842, 0.0024087, 0.00358413, -0.00140842, 0.00275941)
+
+[node name="Coffee maker" instance=ExtResource("1_l5d2b")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.140049, 0.127335, 0.176665)
+shape = SubResource("BoxShape3D_ijtmb")
+
+[node name="GrabPointHandLeft" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -0.0548107, 0.998497, 0, -0.998497, -0.0548107, 0.00665344, 0.00185777, 0.352858)
+
+[node name="GrabPointHandRight" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, -0.0548107, 0.998497, 0, -0.998497, -0.0548107, 0.0971395, 0.0524958, -0.0267073)
+
+[node name="HighlightRing" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0587626, 0.0518578, 0.18049)
+
+[node name="uploads_files_3629114_Machine+v1" parent="." index="4" instance=ExtResource("2_1ourn")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.149905, 0, 0.174373)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(50, 0, 0, 0, -2.18557e-06, 50, 0, -50, -2.18557e-06, 0.162511, 0, 0.173504)
+shape = SubResource("ConvexPolygonShape3D_2uke7")

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dbda5n8yq8d8a"
-path="res://.godot/imported/wine_bottle.fbx-70db3f0a61edd80de4c606c2a39d277a.scn"
+path="res://.godot/imported/wine_bottle.fbx-ab57799e9a31b0c5cfddaf7d8f1757ea.scn"
 
 [deps]
 
-source_file="res://Items/wine_bottle.fbx"
-dest_files=["res://.godot/imported/wine_bottle.fbx-70db3f0a61edd80de4c606c2a39d277a.scn"]
+source_file="res://Items/mesh files/wine_bottle.fbx"
+dest_files=["res://.godot/imported/wine_bottle.fbx-ab57799e9a31b0c5cfddaf7d8f1757ea.scn"]
 
 [params]
 
