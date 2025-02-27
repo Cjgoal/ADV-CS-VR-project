@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://c2u2yasyfotxr" path="res://components/persistent/persistent_staging.tscn" id="1"]
 [ext_resource type="Script" path="res://game/main.gd" id="2_dmefr"]
-[ext_resource type="Texture2D" uid="uid://cfg2l3a04ds84" path="res://Untitled drawing.png" id="3_q5yty"]
+[ext_resource type="Texture2D" uid="uid://cbsk2oyax2jil" path="res://assets/splash/webpbwepwbep.jpg" id="3_bbr6a"]
 
 [node name="Main" instance=ExtResource("1")]
 script = ExtResource("2_dmefr")
 main_scene = "res://game/start_scene/start_scene.tscn"
 
 [node name="LoadingScreen" parent="." index="2"]
-splash_screen = ExtResource("3_q5yty")
+splash_screen = ExtResource("3_bbr6a")
