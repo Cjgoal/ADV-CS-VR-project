@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c4rpcr7s5pt3v" path="res://game/items/rock/rock.tscn" id="12_cxbia"]
 [ext_resource type="PackedScene" uid="uid://chch4r7wddwdj" path="res://game/objects/storage/storage_box.tscn" id="13_galon"]
 [ext_resource type="PackedScene" uid="uid://dbepe4i2q62yy" path="res://game/items/crate/crate.tscn" id="13_mtgv7"]
-[ext_resource type="PackedScene" uid="uid://ba17mhrm3wg4q" path="res://WineBottle.tscn" id="13_wubyy"]
+[ext_resource type="PackedScene" uid="uid://ba17mhrm3wg4q" path="res://Items/WineBottle.tscn" id="13_wubyy"]
 [ext_resource type="PackedScene" uid="uid://c33bpwxnrb0gr" path="res://game/items/toolbox/toolbox.tscn" id="14_68l3l"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r638r"]
