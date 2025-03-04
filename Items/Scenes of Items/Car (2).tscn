@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://dec4ipbw6gkb4" path="res://Items/mesh files/uploads_files_3846903_Nissan_GTR_nismo_2022.fbx" id="1_6akvr"]
 
 [node name="uploads_files_3846903_Nissan_GTR_nismo_2022" instance=ExtResource("1_6akvr")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
