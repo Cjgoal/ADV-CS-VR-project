@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cswbea41l1gsn"]
+
+[ext_resource type="PackedScene" uid="uid://qaff1wo7w0bd" path="res://Items/mesh files/Bed.fbx" id="1_2p1ik"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_je7fh"]
+size = Vector3(8.05933, 1.61926, 5.87598)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ab2my"]
+size = Vector3(0.390747, 4.92883, 7.85266)
+
+[node name="Bed" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Bed" parent="StaticBody3D" instance=ExtResource("1_2p1ik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99119, -1.19209e-07, -0.102772)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11829, 0.74651, -0.382324)
+shape = SubResource("BoxShape3D_je7fh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95622, 2.39037, -0.409607)
+shape = SubResource("BoxShape3D_ab2my")
