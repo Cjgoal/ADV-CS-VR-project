@@ -238,3 +238,11 @@ func _on_auto_return() -> void:
 
 	# Instruct the pocket to pick us up
 	_last_pocket.pick_up_object.call_deferred(self)
+	
+	
+	
+	
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	Globals.Game_Score += 1

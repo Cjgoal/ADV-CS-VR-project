@@ -1,14 +1,27 @@
 extends PanelContainer
 
 var time_left = 60  # Countdown time in seconds
-var score = 0       # Score counter
 var timer = null    # Timer node
 var label = null    # Reference to the Label node
+
+enum GameDifficulty {
+	GAME_EASY,
+	GAME_NORMAL,
+	GAME_HARD,
+	GAME_MAX
+}
 
 func _ready():
 	# Get the Label node
 	label = %Label  # Make sure your Label node is a direct child of this PanelContainer
-	score = %score
+	if (GameState.game_difficulty == GameDifficulty.GAME_EASY):
+		time_left = 180
+	if (GameState.game_difficulty == GameDifficulty.GAME_NORMAL):
+		time_left = 120
+	if (GameState.game_difficulty == GameDifficulty.GAME_HARD):
+		time_left = 60
+	if (GameState.game_difficulty == GameDifficulty.GAME_MAX):
+		time_left = 40
 
 	# Create and start the countdown timer
 	timer = Timer.new()
@@ -30,15 +43,13 @@ func _on_timer_timeout():
 func update_timer_label():
 	if label:
 		label.text = "Time Left: " + str(time_left)
-	if score:
-		score.text = "Score:" + score
+	if %Score:
+		%Score.text = "Score: " + str(Globals.Game_Score)
 
 
-func increase_score(points):
-	score += points
 
 func end_game():
-	print("Game Over! Final Score:", score)
+	print("Game Over! Final Score:", Globals.Game_Score)
 	GameState.quit_game()
 
 func _on_quit_button_pressed():

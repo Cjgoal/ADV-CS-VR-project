@@ -3,6 +3,7 @@ class_name PersistentZone
 extends XRToolsSceneBase
 
 
+
 ## Persistent Zone Node
 ##
 ## The [PersistentNode] class is an extension of [XRToolsSceneBase] which
